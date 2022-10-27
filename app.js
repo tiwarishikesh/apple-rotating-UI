@@ -15,7 +15,6 @@ watchAnimation = {
         myImage.onload = async () => {
             watchAnimation.dimensions.width = myImage.width;
             watchAnimation.dimensions.height = myImage.height;
-            console.log(($("#mydummyDiv").width * (myImage.width / myImage.height))+'px');
             $("#mydummyDiv").css('height', ($("#mydummyDiv").width() * (myImage.height / myImage.width))+'px');
             $('#rotationSquare').css('width',
             Math.max(
@@ -30,7 +29,6 @@ watchAnimation = {
             $('#rotationSquare img').css('width',$("#mydummyDiv").width());
             $('#rotationSquare img:eq(0)').css('right',`calc(50% - ${watchAnimation.dimensions.height/2}px)`);
             $('#rotationSquare img:eq(2)').css('left',`calc(50% - ${watchAnimation.dimensions.height/2}px)`);
-            console.log($("#rotationSquare img:eq(0)")[0].getBoundingClientRect().top);
             $('#rotationSquare img:eq(1)').css('top',`${$("#rotationSquare img:eq(0)")[0].getBoundingClientRect().top - $("#rotationSquare")[0].getBoundingClientRect().top}px`);
             $('#rotationSquare img:eq(1)').css('left',`${$("#rotationSquare img:eq(0)")[0].getBoundingClientRect().left - $("#rotationSquare")[0].getBoundingClientRect().left}px`);
             $("#rotationSquare").css('transform','rotate(0deg)');
